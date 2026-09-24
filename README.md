@@ -144,9 +144,9 @@ The source code is kept private and is available to the judging committee on req
 
 | الاسم | الدور |
 |---|---|
-| **دنو محمد العنزي** (Dana Mohammed Alanazi) | قائدة الفريق |
+|  (Dana Mohammed Alanazi) | قائدة الفريق |
 | Renad Metab Aldosari | عضو الفريق |
-| جواهر فيصل الشريف (Jawaher Faisal Alsharif) | عضو الفريق |
+|  (Jawaher Faisal Alsharif) | عضو الفريق |
 | Hailah Abdulrahman Alhejjei | عضو الفريق |
 | Abrar Hassan Alqarni | عضو الفريق |
 
