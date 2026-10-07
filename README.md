@@ -4,7 +4,7 @@
 
 > A low-cost, two-way LoRa distress and tracking system that connects lost persons to rescue teams beyond cellular coverage.
 
-📄 **[Scientific Poster (PDF)](Aoun_SAIF_Poster.pdf)** · 🔒 **[Security Verification Report (PDF)](Aoun_Security_Verification_Report.pdf)**
+📄 **[Scientific Poster (PDF)](Aoun_SAIF_Poster.pdf)** · 🔒 **[Security Verification Report v2 (PDF)](Aoun_Security_Verification_Report.pdf)**
 
 [English](#english) · [العربية](#arabic)
 
@@ -56,7 +56,21 @@ People lost in deserts, mountains and remote areas are often far from any cellul
 | Encrypted ACK + reassurance message | **62 bytes** |
 | SOS airtime, SF9 / SF12 | **≈ 0.34 s / 2.5 s** |
 
-Security tests were run on a PC host with the same code used in the firmware (details in the [report](Aoun_Security_Verification_Report.pdf)). Field validation of range, delivery rate, confirmation time and battery life follows hardware assembly.
+Security tests were run on a PC host with the same code used in the firmware, compiled against Mbed TLS 2.28 (details in the [report](Aoun_Security_Verification_Report.pdf)).
+
+### On the real boards (2 × LILYGO T-Beam V1.2, 7 Oct 2026)
+
+| Test | Result |
+|---|---|
+| Encrypted SOS received and verified by the rescue unit | ✅ |
+| Encrypted confirmation verified by the victim unit | ✅ |
+| Automatic retry until confirmation | ✅ |
+| SOS with a wrong key | **Rejected 5 / 5** |
+| SOS from an unregistered device | **Rejected 3 / 3** |
+| GPS first fix (cold / warm start) | **≈ 4 min / ≈ 1 min** |
+| Indoor link, incl. through a concrete floor | **100 % delivery**, RSSI −31 to −80 dBm |
+
+Next: field tests at 0.5 / 1 / 2 / 5 km for range, delivery rate, confirmation time and battery life with solar charging.
 
 ## Innovation
 
@@ -66,7 +80,7 @@ Security tests were run on a PC host with the same code used in the firmware (de
 
 ## Status
 
-**Proof of Concept.** The design, protocol and security layer are complete and verified. Hardware assembly and field testing are in progress.
+**Proof of Concept.** Both boards run the encrypted two-way SOS → confirmation loop, verified on hardware. Peripheral assembly, enclosures and field testing are in progress.
 
 **Future work:** mesh relaying, a rugged waterproof enclosure, automatic fall / no-motion SOS, a multi-team dashboard, and a pilot with a rescue team.
 
@@ -130,13 +144,24 @@ The source code is kept private and is available to the judging committee on req
 | حجم رسالة التأكيد مع رسالة الطمأنة | **62 بايت** |
 | زمن إرسال الاستغاثة (SF9 / SF12) | **≈ 0.34 ثانية / 2.5 ثانية** |
 
+**على العتاد الحقيقي (لوحتا T-Beam V1.2، 7 أكتوبر 2026):**
+
+| الاختبار | النتيجة |
+|---|---|
+| استغاثة مشفّرة وصلت وتحقق منها جهاز الفريق | ✅ |
+| تأكيد مشفّر وصل لجهاز المفقود وتحقق منه | ✅ |
+| استغاثة بمفتاح خاطئ | **رُفضت 5 من 5** |
+| استغاثة من جهاز غير مسجّل | **رُفضت 3 من 3** |
+| زمن أول تحديد للموقع | **≈ 4 دقائق أول تشغيل · ≈ دقيقة بعدها** |
+| الاتصال داخل المبنى، ومنها عبر سقف خرساني | **وصول 100%** |
+
 ## الابتكار
 
 **طمأنة ثنائية الاتجاه، وليست مجرد إنذار.** عون يُعلم المفقود فوراً وبشكل مرئي أن الفريق القريب استلم نداءه، بدون شبكة أو اشتراك أو أقمار صناعية.
 
 ## حالة المشروع
 
-**إثبات مفهوم:** التصميم والبروتوكول وطبقة الأمان مكتملة ومختبرة، وتركيب الأجهزة والاختبار الميداني قيد التنفيذ.
+**إثبات مفهوم:** اللوحتان تشغّلان حلقة الاستغاثة والتأكيد المشفّرة، ومختبرة على العتاد الحقيقي. توصيل بقية القطع والعلبة والاختبار الميداني قيد التنفيذ.
 
 ## الفريق
 
@@ -144,9 +169,9 @@ The source code is kept private and is available to the judging committee on req
 
 | الاسم | الدور |
 |---|---|
-|  (Dana Mohammed Alanazi) | قائدة الفريق |
+| **دنو محمد العنزي** (Dana Mohammed Alanazi) | قائدة الفريق |
 | Renad Metab Aldosari | عضو الفريق |
-|  (Jawaher Faisal Alsharif) | عضو الفريق |
+| جواهر فيصل الشريف (Jawaher Faisal Alsharif) | عضو الفريق |
 | Hailah Abdulrahman Alhejjei | عضو الفريق |
 | Abrar Hassan Alqarni | عضو الفريق |
 
@@ -163,8 +188,9 @@ The source code is kept private and is available to the judging committee on req
 3. LILYGO, *LoRa Series (T-Beam)*: [github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series](https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series)
 4. RadioLib: [github.com/jgromes/RadioLib](https://github.com/jgromes/RadioLib)
 5. TinyGPS++: [github.com/mikalhart/TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus)
-6. TFT_eSPI: [github.com/Bodmer/TFT_eSPI](https://github.com/Bodmer/TFT_eSPI)
-7. Adafruit SSD1306: [github.com/adafruit/Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
-8. Mbed TLS: [github.com/Mbed-TLS/mbedtls](https://github.com/Mbed-TLS/mbedtls)
+6. XPowersLib (AXP2101): [github.com/lewisxhe/XPowersLib](https://github.com/lewisxhe/XPowersLib)
+7. TFT_eSPI: [github.com/Bodmer/TFT_eSPI](https://github.com/Bodmer/TFT_eSPI)
+8. Adafruit SSD1306: [github.com/adafruit/Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
+9. Mbed TLS: [github.com/Mbed-TLS/mbedtls](https://github.com/Mbed-TLS/mbedtls)
 
 © 2026 Team Aoun, Digital Technical College for Girls. All rights reserved.
