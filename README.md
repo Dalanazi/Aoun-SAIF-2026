@@ -4,7 +4,7 @@
 
 > A low-cost, two-way LoRa distress and tracking system that connects lost persons to rescue teams beyond cellular coverage.
 
-📄 **[Scientific Poster (PDF)](Aoun_SAIF_Poster.pdf)** · 🔒 **[Security Verification Report v2 (PDF)](Aoun_Security_Verification_Report.pdf)**
+📄 **[Scientific Poster (PDF)](Aoun_SAIF_Poster.pdf)** · 📚 **[References & Evidence](REFERENCES.md)** · 🔒 **[Security Verification Report v2 (PDF)](Aoun_Security_Verification_Report.pdf)**
 
 [English](#english) · [العربية](#arabic)
 
@@ -14,7 +14,7 @@
 
 ## Overview
 
-Aoun is a pair of devices that communicate directly over long-range LoRa radio, with **no cellular network, internet, subscription or satellite**.
+Aoun is a pair of devices that communicate directly over long-range LoRa radio, with **no cellular network, internet or subscription**. Satellites are used only to receive the GPS position (free and receive-only); no message is sent through a satellite.
 
 - **Victim unit:** one press of the SOS button sends the lost person's GPS location.
 - **Rescue unit:** shows the location on a screen, and the team sends back a confirmation.
@@ -76,7 +76,7 @@ Next: field tests at 0.5 / 1 / 2 / 5 km for range, delivery rate, confirmation t
 
 ![Comparison with existing options](comparison_table.png)
 
-**Two-way reassurance, not just an alarm.** Aoun tells the lost person, instantly and visibly, that the nearby team received the call. It needs no network, no subscription and no satellite.
+**Two-way reassurance, not just an alarm.** Aoun tells the lost person, instantly and visibly, that the nearby team received the call. It needs no network and no subscription, and it uses satellites only to receive its GPS position.
 
 ## Status
 
@@ -90,7 +90,7 @@ Next: field tests at 0.5 / 1 / 2 / 5 km for range, delivery rate, confirmation t
 
 | Name | Role |
 |---|---|
-| **Dana Mohammed Alanazi** | Team Leader |
+| **Dana Mohammad Alanazi** | Team Leader |
 | Renad Metab Aldosari | Team Member |
 | Jawaher Faisal Alsharif | Team Member |
 | Hailah Abdulrahman Alhejjei | Team Member |
@@ -106,7 +106,7 @@ The source code is kept private and is available to the judging committee on req
 
 ## نظرة عامة
 
-عون جهازان يتواصلان مباشرة عبر موجات LoRa بعيدة المدى، **بدون شبكة جوال أو إنترنت أو اشتراك أو أقمار صناعية**.
+عون جهازان يتواصلان مباشرة عبر موجات LoRa بعيدة المدى، **بدون شبكة جوال أو إنترنت أو اشتراك**. الأقمار الصناعية تُستخدم فقط لاستقبال موقع GPS (مجاناً واستقبالاً فقط)، ولا تُرسَل أي رسالة عبر قمر صناعي.
 
 - **جهاز المفقود:** بضغطة زر SOS يرسل موقعه من الـGPS.
 - **جهاز الفريق:** يعرض الموقع على الشاشة، ويرسل منه الفريق تأكيداً.
@@ -157,7 +157,7 @@ The source code is kept private and is available to the judging committee on req
 
 ## الابتكار
 
-**طمأنة ثنائية الاتجاه، وليست مجرد إنذار.** عون يُعلم المفقود فوراً وبشكل مرئي أن الفريق القريب استلم نداءه، بدون شبكة أو اشتراك أو أقمار صناعية.
+**طمأنة ثنائية الاتجاه، وليست مجرد إنذار.** عون يُعلم المفقود فوراً وبشكل مرئي أن الفريق القريب استلم نداءه، بدون شبكة أو اشتراك، ويستخدم الأقمار الصناعية فقط لاستقبال موقع GPS.
 
 ## حالة المشروع
 
@@ -169,7 +169,7 @@ The source code is kept private and is available to the judging committee on req
 
 | الاسم | الدور |
 |---|---|
-| **دنو محمد العنزي** (Dana Mohammed Alanazi) | قائدة الفريق |
+| **دنو محمد العنزي** (Dana Mohammad Alanazi) | قائدة الفريق |
 | Renad Metab Aldosari | عضو الفريق |
 | جواهر فيصل الشريف (Jawaher Faisal Alsharif) | عضو الفريق |
 | Hailah Abdulrahman Alhejjei | عضو الفريق |
