@@ -68,7 +68,7 @@ Security tests were run on a PC host with the same code used in the firmware, co
 | SOS with a wrong key | **Rejected 5 / 5** |
 | SOS from an unregistered device | **Rejected 3 / 3** |
 | GPS first fix (cold / warm start) | **≈ 4 min / ≈ 1 min** |
-| Indoor link, incl. through a concrete floor | **100 % delivery**, RSSI −31 to −80 dBm |
+| Indoor link, incl. through a concrete floor | **All messages received in short indoor runs**, RSSI −31 to −80 dBm |
 
 Next: field tests at 0.5 / 1 / 2 / 5 km for range, delivery rate, confirmation time and battery life with solar charging.
 
@@ -80,9 +80,15 @@ Next: field tests at 0.5 / 1 / 2 / 5 km for range, delivery rate, confirmation t
 
 ## Status
 
-**Proof of Concept.** Both boards run the encrypted two-way SOS → confirmation loop, verified on hardware. Peripheral assembly, enclosures and field testing are in progress.
+**Proof of Concept.** Both units are fully assembled in 3D-printed enclosures and run the final firmware (v1.2): encrypted two-way SOS → confirmation, live tracking every 30 s after confirmation, and an encrypted SOS cancel. Prototype build cost for both units: **1,046 SAR**. Tests so far are short indoor lab runs; open-terrain range testing is next.
 
-**Future work:** mesh relaying, a rugged waterproof enclosure, automatic fall / no-motion SOS, a multi-team dashboard, and a pilot with a rescue team.
+**Roadmap (future work):**
+1. **Range tests:** open terrain, toward 10 km+.
+2. **Relay network:** units pass messages on to a gateway at base camp.
+3. **Operations room:** a live map of all teams and cases (a dashboard prototype has been tested in simulation).
+4. **Pilot:** with Enjad Search & Rescue Association and the Civil Defense.
+
+Also planned: a rugged waterproof enclosure and automatic SOS on fall.
 
 ## Team
 
@@ -153,7 +159,7 @@ The source code is kept private and is available to the judging committee on req
 | استغاثة بمفتاح خاطئ | **رُفضت 5 من 5** |
 | استغاثة من جهاز غير مسجّل | **رُفضت 3 من 3** |
 | زمن أول تحديد للموقع | **≈ 4 دقائق أول تشغيل · ≈ دقيقة بعدها** |
-| الاتصال داخل المبنى، ومنها عبر سقف خرساني | **وصول 100%** |
+| الاتصال داخل المبنى، ومنها عبر سقف خرساني | **وصلت كل الرسائل في اختبارات داخلية قصيرة** |
 
 ## الابتكار
 
@@ -161,7 +167,9 @@ The source code is kept private and is available to the judging committee on req
 
 ## حالة المشروع
 
-**إثبات مفهوم:** اللوحتان تشغّلان حلقة الاستغاثة والتأكيد المشفّرة، ومختبرة على العتاد الحقيقي. توصيل بقية القطع والعلبة والاختبار الميداني قيد التنفيذ.
+**إثبات مفهوم:** الجهازان مجمّعان بالكامل داخل علب مطبوعة ثلاثية الأبعاد، ويعملان بالبرنامج النهائي (الإصدار 1.2): استغاثة وتأكيد مشفّران، وتتبع مباشر كل 30 ثانية بعد التأكيد، وإلغاء مشفّر للاستغاثة. تكلفة بناء الجهازين: **1,046 ريال**. الاختبارات حتى الآن داخلية وقصيرة، واختبار المدى في أرض مفتوحة هو الخطوة القادمة.
+
+**خارطة الطريق:** (1) اختبار المدى حتى 10 كم أو أكثر · (2) شبكة ترحيل توصل الرسائل لبوابة في نقطة الانطلاق · (3) غرفة عمليات بخريطة مباشرة لكل الفرق (نموذج أولي مجرّب بالمحاكاة) · (4) تجربة فعلية مع جمعية إنجاد والدفاع المدني.
 
 ## الفريق
 
@@ -183,14 +191,28 @@ The source code is kept private and is available to the judging committee on req
 
 ## References | المراجع
 
-1. Semtech, *SX1262 LoRa Connect Transceiver*: [semtech.com/products/wireless-rf/lora-connect/sx1262](https://www.semtech.com/products/wireless-rf/lora-connect/sx1262)
-2. NIST SP 800-38D, *Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC*: [csrc.nist.gov/pubs/sp/800/38/d/final](https://csrc.nist.gov/pubs/sp/800/38/d/final)
-3. LILYGO, *LoRa Series (T-Beam)*: [github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series](https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series)
-4. RadioLib: [github.com/jgromes/RadioLib](https://github.com/jgromes/RadioLib)
-5. TinyGPS++: [github.com/mikalhart/TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus)
-6. XPowersLib (AXP2101): [github.com/lewisxhe/XPowersLib](https://github.com/lewisxhe/XPowersLib)
-7. TFT_eSPI: [github.com/Bodmer/TFT_eSPI](https://github.com/Bodmer/TFT_eSPI)
-8. Adafruit SSD1306: [github.com/adafruit/Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
-9. Mbed TLS: [github.com/Mbed-TLS/mbedtls](https://github.com/Mbed-TLS/mbedtls)
+Numbers match the citations on the poster ([1]–[18]). The claim each source supports is listed in **[REFERENCES.md](REFERENCES.md)**.
+الأرقام تطابق أرقام المراجع في البوستر، وتفاصيل كل مرجع في ملف REFERENCES.md.
+
+1. AMSA, *How distress beacons work*. https://beacons.amsa.gov.au/about/how-they-work.asp
+2. European GNSS Service Centre, *SAR/Galileo Return Link Service*. https://www.gsc-europa.eu/node/5876
+3. KSL, *Hiking safety: what to do if you get lost* (interview with a search and rescue coordinator). https://www.ksl.com/article/36147671/hiking-safety-what-to-do-if-you-get-lost · Trail Hiking Australia, *What to do if you get lost hiking*. https://www.trailhiking.com.au/hike-safety/getting-lost/
+4. Garmin, *inReach satellite communication: subscription plans*. https://www.garmin.com.my/minisite/inreach/personal/
+5. MacRumors, *Apple's free satellite features on iPhone: available countries* (Oct 2025). https://www.macrumors.com/2025/10/10/apple-satellite-features-which-countries/
+6. GPS.gov, *Free access for civilian use*. https://www.gps.gov/node/34
+7. Semtech LoRa overview (via Richardson RFPD). https://www.richardsonrfpd.com/?p=13261
+8. Communications, Space & Technology Commission (CST), *RI054 Specification for Short Range Devices*. https://www.cst.gov.sa/ar/RulesandSystems/RegulatoryDocuments/EquipmentApproval/Documents/TA%20959%20E%20RI054.pdf
+9. Semtech, *SX1262 product page*. https://www.semtech.com/products/wireless-rf/lora-transceivers/sx1262
+10. u-blox, *NEO-6 GPS Modules Data Sheet* (GPS.G6-HW-09005). https://www.u-blox.com/sites/default/files/products/documents/NEO-6_DataSheet_%28GPS.G6-HW-09005%29.pdf
+11. NIST SP 800-38D, *Galois/Counter Mode (GCM) and GMAC*. https://csrc.nist.gov/pubs/sp/800/38/d/final
+12. LILYGO, *T-Beam* product page (US$40.98). https://lilygo.cc/products/t-beam-softrf
+13. ACR ResQLink 410 RLS listing (US$429.95). https://freeportmarine.com/products/acr-resqlink-410-rls
+14. Al-Watan, *131 مفقودا في الصحارى* (7 Apr 2021). https://www.alwatan.com.sa/article/1073200
+15. Al-Watan, *128 بلاغا يوميا لمركبات عالقة* (7 Apr 2025). https://www.alwatan.com.sa/ampArticle/1163298
+16. Our security test report: [Aoun_Security_Verification_Report.pdf](Aoun_Security_Verification_Report.pdf)
+17. Our on-device lab tests, ["On the real boards" on this page](#on-the-real-boards-2--lilygo-t-beam-v12-7-oct-2026)
+18. GPS.gov, *Space Segment*. https://www.gps.gov/systems/gps/space · GPS.gov, *Constellation arrangement*. https://www.gps.gov/node/198
+
+**Open-source libraries used | المكتبات مفتوحة المصدر:** [RadioLib](https://github.com/jgromes/RadioLib) · [TinyGPS++](https://github.com/mikalhart/TinyGPSPlus) · [XPowersLib](https://github.com/lewisxhe/XPowersLib) · [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) · [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306) · [Mbed TLS](https://github.com/Mbed-TLS/mbedtls) · [LILYGO T-Beam](https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series)
 
 © 2026 Team Aoun, Digital Technical College for Girls. All rights reserved.

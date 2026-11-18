@@ -1,6 +1,6 @@
 # Aoun (عون): References & Evidence
 
-Every numbered claim on the SAIF 2026 poster ([1]–[17]) is backed by one of the sources below.
+Every numbered claim on the SAIF 2026 poster ([1]–[18]) is backed by one of the sources below.
 
 ## External sources
 
@@ -21,6 +21,7 @@ Every numbered claim on the SAIF 2026 poster ([1]–[17]) is backed by one of th
 | 13 | A PLB with return-link confirmation costs about US$430. | ACR ResQLink 410 RLS listing (US$429.95). https://freeportmarine.com/products/acr-resqlink-410-rls |
 | 14 | 131 people went missing in Saudi deserts in 1441 AH; 20 died of hunger and thirst (Enjad Search and Rescue Association statistic). | Al-Watan, *131 مفقودا في الصحارى* (7 Apr 2021). https://www.alwatan.com.sa/article/1073200 |
 | 15 | Enjad volunteers handled 902 reports in one week (≈ 128 a day), including missing persons. | Al-Watan, *128 بلاغا يوميا لمركبات عالقة* (7 Apr 2025). https://www.alwatan.com.sa/ampArticle/1163298 |
+| 18 | GPS is a constellation of 31+ operational satellites in medium Earth orbit (≈ 20,200 km); a receiver needs signals from at least 4 satellites to fix a 3D position. | GPS.gov, *Space Segment*. https://www.gps.gov/systems/gps/space · GPS.gov, *Constellation arrangement*. https://www.gps.gov/node/198 |
 
 ## Our own evidence
 
